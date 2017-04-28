@@ -114,7 +114,7 @@ BLAST_primer = function(forward, reverse, ..., organism='',
   start_time = now()
 
   message('Submitting Primer-BLAST query')
-  response = POST_retry(paste(url, 'primertool.cgi', sep=''), body=options)
+  response = POST_retry(paste(url, 'primertool.cgi', sep=''), body=options, encode='form')
 
   values = get_refresh_from_meta(response)
 
